@@ -1,0 +1,18 @@
+<svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-htc-logo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color: #00F0FF;" />
+      <stop offset="100%" style="stop-color: #0066FF;" />
+    </linearGradient>
+    <style>
+      .logo-text {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 40px;
+        fill: url(#grad-htc-logo);
+        letter-spacing: -2px;
+      }
+    </style>
+  </defs>
+  <text x="0" y="40" class="logo-text">HTC</text>
+</svg>
