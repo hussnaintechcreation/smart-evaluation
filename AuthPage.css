@@ -1,0 +1,269 @@
+/* Inherits variables from index.css */
+
+.auth-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem; /* Add some padding for smaller screens */
+}
+
+/* REFACTOR: Enhanced futuristic styling for the login panel */
+.auth-form-wrapper {
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.8s ease-in-out;
+  /* More transparent background with less blur to see the globe better */
+  background-color: rgba(10, 10, 32, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 0 25px rgba(51, 161, 255, 0.1);
+}
+
+.auth-content-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 1; /* Allow content to grow and push footer down */
+}
+
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.auth-header .logo {
+  margin: 0 auto 1rem;
+}
+
+.auth-header h1 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+  color: var(--text-secondary);
+}
+
+
+.landing-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* REFACTOR: New button style with glow effect */
+.portal-button, .auth-button {
+  width: 100%;
+  background: transparent;
+  color: var(--primary-accent);
+  border: 2px solid var(--primary-accent);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(51, 161, 255, 0.5);
+}
+.portal-button:hover, .auth-button:hover {
+  background: var(--primary-accent);
+  color: var(--primary-bg);
+  box-shadow: 0 0 20px 0px var(--primary-accent);
+  text-shadow: none;
+}
+
+.portal-button.secondary {
+  border-color: var(--secondary-accent);
+  color: var(--secondary-accent);
+  text-shadow: 0 0 5px rgba(79, 195, 247, 0.5);
+}
+.portal-button.secondary:hover {
+  background-color: var(--secondary-accent);
+  box-shadow: 0 0 20px 0px var(--secondary-accent);
+}
+
+.form-view {
+  animation: fadeIn 0.5s ease-out;
+  width: 100%;
+  position: relative; /* For back button */
+}
+
+.back-button {
+  position: absolute;
+  top: -2.5rem;
+  left: -1.5rem;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+.back-button:hover {
+  border-color: var(--primary-accent);
+  color: var(--primary-accent);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-hint {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: -1rem;
+  margin-bottom: -0.5rem;
+}
+
+.input-group {
+  position: relative;
+}
+
+/* Accessibility: Class for screen-reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+/* REFACTOR: "Holographic" input style */
+.input-group input {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  border-radius: 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary-accent);
+  box-shadow: 0 4px 10px -8px var(--primary-accent);
+}
+
+
+.error-message {
+  background-color: rgba(229, 115, 115, 0.1);
+  border: 1px solid #e57373;
+  color: #f7a1a1;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  animation: fadeIn 0.3s;
+  margin-top: -0.5rem;
+  margin-bottom: 0; /* Adjust from 1.5rem to fit better */
+}
+
+.toggle-auth-view {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.toggle-auth-view button {
+  background: none;
+  border: none;
+  color: var(--primary-accent);
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+.toggle-auth-view button:hover {
+  text-decoration: underline;
+}
+
+
+.auth-form-wrapper .app-footer {
+    border-top: none;
+    background: transparent;
+    padding-top: 2rem;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+.auth-divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 1.5rem 0;
+}
+
+/* REFACTOR: Style Download button to match other futuristic buttons */
+.download-app-button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: transparent;
+  border: 2px solid var(--secondary-accent);
+  color: var(--secondary-accent);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  text-shadow: 0 0 5px rgba(79, 195, 247, 0.5);
+}
+
+.download-app-button:hover {
+  background-color: var(--secondary-accent);
+  color: var(--primary-bg);
+  box-shadow: 0 0 20px 0px var(--secondary-accent);
+  text-shadow: none;
+}
+
+.download-app-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 900px) {
+    .auth-form-wrapper {
+        width: 100%;
+        max-width: 450px;
+        background-color: var(--secondary-bg); /* Use solid color on smaller screens */
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+}

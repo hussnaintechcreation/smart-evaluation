@@ -1,0 +1,240 @@
+/* Inherits variables from index.css */
+
+.candidate-profile-panel {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.candidate-profile-panel > * {
+    animation: card-pop-in 0.6s ease-out forwards;
+    opacity: 0;
+}
+.candidate-profile-panel .profile-layout {
+    animation-delay: 0.1s;
+}
+
+
+.profile-page-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.profile-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.back-to-list-button {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+    border-radius: var(--border-radius);
+}
+.back-to-list-button:hover {
+    color: var(--primary-accent);
+    border-color: var(--primary-accent);
+    background-color: rgba(126, 87, 194, 0.1);
+}
+
+
+.editable-header-name {
+    font-family: var(--font-sans);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    padding: 0.25rem 0.5rem;
+    margin: -0.25rem -0.5rem;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    max-width: 500px;
+}
+.editable-header-name:hover {
+    border-color: var(--border-color);
+    background-color: var(--secondary-bg);
+}
+.editable-header-name:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    background-color: var(--secondary-bg);
+    box-shadow: 0 0 0 3px rgba(126, 87, 194, 0.2);
+}
+
+.profile-page-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.back-link {
+    background: none;
+    border: none;
+    color: var(--primary-accent);
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 0;
+}
+
+.status-badge-large {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--primary-bg);
+    min-width: 150px;
+}
+/* Use the same status colors from CandidateManagement.css */
+.status-pending { background-color: #FFA726; color: #000; }
+.status-awaitingreview { background-color: #26C6DA; color: #000; }
+.status-approved { background-color: var(--primary-accent); }
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.profile-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Adjusted animation delays for new section */
+.profile-main-content > .profile-section {
+    animation: card-pop-in 0.6s ease-out forwards;
+    opacity: 0;
+}
+.profile-main-content > .profile-section:nth-child(1) { animation-delay: 0.0s; } /* Assign Interview */
+.profile-main-content > .profile-section:nth-child(2) { animation-delay: 0.1s; } /* Candidate Details */
+.profile-main-content > .profile-section:nth-child(3) { animation-delay: 0.2s; } /* Private Notes */
+.profile-main-content > .profile-section:nth-child(4) { animation-delay: 0.3s; } /* Interview History */
+.profile-main-content > .profile-section:nth-child(5) { animation-delay: 0.4s; } /* AI Analysis */
+
+
+.profile-section {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.profile-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* Assign Interview Section */
+.assign-interview-section {
+    border-left: 4px solid var(--secondary-accent);
+}
+.assign-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.template-select {
+    flex-grow: 1;
+    font-size: 1rem;
+}
+.assign-button {
+    background-color: var(--primary-accent);
+    color: var(--primary-bg);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.assign-button:hover:not(:disabled) {
+    filter: brightness(1.1);
+}
+.assign-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.no-templates-message {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+.no-templates-message a {
+    text-decoration: underline;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+/* New Candidate Details Section */
+.candidate-details-section {
+    border-left: 4px solid var(--primary-accent);
+}
+.candidate-details-section h3 {
+    color: var(--primary-accent);
+}
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+.detail-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    background-color: var(--primary-bg);
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+.detail-row .detail-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+.detail-row span:not(.detail-label) {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+
+/* Notes Editor Styles */
+.notes-editor-container {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--primary-bg);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notes-editor-container:focus-within {
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px rgba(126, 87, 194, 0.2);
+}
+
+.notes-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.notes-toolbar button {
+    background: transparent;

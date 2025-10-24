@@ -1,0 +1,68 @@
+.organization-selector-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary-bg);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.organization-selector-box {
+  width: 100%;
+  max-width: 500px;
+  background-color: var(--secondary-bg);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.organization-selector-header {
+  margin-bottom: 2.5rem;
+}
+
+.organization-selector-header .logo {
+  margin: 0 auto 1rem;
+}
+
+.organization-selector-header h2 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.organization-selector-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.organization-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.organization-card {
+  width: 100%;
+  background-color: var(--primary-bg);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: inherit;
+  color: var(--text-primary);
+}
+
+.organization-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-accent);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.organization-card h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}

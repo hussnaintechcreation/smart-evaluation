@@ -1,0 +1,357 @@
+/* Inherits variables from index.css */
+
+.admin-panel-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+.admin-panel-content {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h2 {
+  font-size: 2.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(140px, auto);
+  gap: 1.5rem;
+}
+
+/* Staggered animation for grid items */
+.dashboard-grid > * {
+    animation: card-pop-in 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+
+.summary-card {
+  background-color: var(--card-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.summary-card:hover {
+  transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+  border-color: var(--primary-accent);
+  box-shadow: 0 20px 30px -15px rgba(126, 87, 194, 0.3);
+}
+
+.summary-card h3 {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.summary-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-accent);
+  margin-bottom: 0.5rem;
+}
+
+.summary-footer {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Chart Styles */
+.chart-card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+.chart-card h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.large-card {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.chart-placeholder {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-style: italic;
+    text-align: center;
+}
+
+
+/* Pipeline Donut Chart */
+.pipeline-chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex: 1;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.donut-chart {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.donut-chart:hover {
+    transform: scale(1.05);
+}
+.donut-chart-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  height: 65%;
+  background: var(--card-bg);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.donut-chart-center span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.legend-color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+.legend-label {
+  color: var(--text-secondary);
+  flex-grow: 1;
+}
+.legend-value {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+/* Score Distribution Bar Chart */
+.score-chart-container {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 1rem 0 0;
+    gap: 1rem;
+}
+
+.bar-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.bar {
+    width: 60%;
+    max-width: 50px;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.5s ease-out, filter 0.2s ease;
+    cursor: pointer;
+}
+.bar-wrapper:hover .bar {
+    filter: brightness(1.2);
+}
+
+.bar-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    white-space: nowrap;
+}
+.bar-tooltip {
+    position: absolute;
+    top: -30px;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+    transform: translateY(10px);
+}
+.bar-wrapper:hover .bar-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Recent Activity Sidebar */
+.recent-activity-sidebar {
+  background-color: var(--card-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  animation: fadeIn 0.5s ease-in-out 0.2s;
+  animation-fill-mode: backwards;
+  height: fit-content;
+}
+
+.recent-activity-sidebar h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.activity-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+}
+
+.activity-item:hover {
+    transform: translateX(5px);
+    background-color: var(--primary-bg);
+}
+
+
+.activity-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--primary-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.activity-icon::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-color: var(--text-secondary);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+}
+
+/* Icons for different activity types */
+.activity-icon.review::before {
+  mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3e%3cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z'/%3e%3c/svg%3e");
+}
+.activity-icon.approved::before {
+  mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3e%3cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3e%3c/svg%3e");
+  background-color: var(--primary-accent);
+}
+.activity-icon.invite::before {
+  mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3e%3cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3e%3c/svg%3e");
+}
+.activity-icon.template::before {
+  mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3e%3cpath d='M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z'/%3e%3c/svg%3e");
+}
+
+
+.activity-details p {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.activity-details span {
+  font-size: 0.8rem;
+  color: var(--secondary-accent);
+}
+
+@media (max-width: 1200px) {
+  .admin-panel-container {
+    grid-template-columns: 1fr;
+  }
+  .recent-activity-sidebar {
+    margin-top: 2rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .large-card, .summary-card {
+        grid-column: span 2;
+    }
+    .large-card {
+        grid-row: span 1; /* Reset row span */
+    }
+}
