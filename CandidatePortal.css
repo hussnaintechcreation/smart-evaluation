@@ -1,0 +1,374 @@
+.candidate-portal-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.candidate-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.candidate-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.candidate-brand .logo {
+    width: 40px;
+    height: 40px;
+}
+
+.candidate-header h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.candidate-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle-portal {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 4px;
+}
+.theme-toggle-portal button {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.3rem;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+.theme-toggle-portal button svg {
+    width: 20px;
+    height: 20px;
+}
+.theme-toggle-portal button:hover {
+    color: var(--text-primary);
+}
+.theme-toggle-portal button.active {
+    background-color: var(--primary-accent);
+    color: var(--primary-bg);
+}
+
+
+.candidate-download-button {
+    background-color: transparent;
+    border: 1px solid var(--secondary-accent);
+    color: var(--secondary-accent);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.candidate-download-button:hover {
+    background-color: rgba(79, 195, 247, 0.1);
+    color: var(--secondary-accent);
+}
+
+.candidate-logout-button {
+    background-color: transparent;
+    border: 1px solid var(--primary-accent);
+    color: var(--primary-accent);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.candidate-logout-button:hover {
+    background-color: rgba(126, 87, 194, 0.1);
+}
+
+.candidate-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for dashboard */
+    padding: 2.5rem;
+    overflow-y: auto;
+}
+
+.candidate-dashboard {
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
+}
+
+.dashboard-header {
+    margin-bottom: 2.5rem;
+}
+
+.dashboard-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.dashboard-grid > .dashboard-panel {
+    animation: card-pop-in 0.6s ease-out forwards;
+    opacity: 0;
+}
+.dashboard-grid > .dashboard-panel:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.dashboard-grid > .dashboard-panel:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+
+.dashboard-panel {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-panel h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.overview-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+}
+.overview-item span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+.overview-item p {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.overview-advice {
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: var(--secondary-accent);
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.no-interview-panel {
+    grid-column: 1 / -1; /* Span full width */
+    text-align: center;
+}
+.no-interview-panel p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+
+/* System Check Panel */
+.system-check-panel {
+    gap: 1.5rem;
+}
+.system-check-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.system-check-video {
+    width: 80px;
+    height: 60px;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-bg);
+    transform: scaleX(-1);
+    object-fit: cover;
+}
+.mic-visualizer {
+    width: 80px;
+    height: 60px;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-bg);
+}
+.status-indicator {
+    flex: 1;
+    font-weight: 500;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.status-indicator svg {
+    transition: all 0.3s ease;
+}
+.status-indicator.ok {
+    color: #66bb6a;
+}
+.status-indicator.ok svg {
+    fill: #66bb6a;
+}
+.status-indicator.pending svg {
+    fill: var(--text-secondary);
+    animation: pulse-opacity 2s infinite ease-in-out;
+}
+@keyframes pulse-opacity {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Interview History Panel */
+.interview-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 300px; /* Or adjust as needed */
+    overflow-y: auto;
+    padding-right: 0.5rem; /* For scrollbar */
+}
+.history-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-bg);
+    border-radius: var(--border-radius);
+    border-left: 4px solid;
+    transition: transform 0.2s ease;
+}
+.history-entry:hover {
+    transform: translateX(4px);
+}
+.history-entry.pending { border-left-color: var(--primary-accent); }
+.history-entry.review { border-left-color: #26C6DA; }
+.history-entry.completed { border-left-color: #66bb6a; }
+
+.history-info h4 {
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0 0 0.25rem 0;
+}
+.history-info span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+.history-status {
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+.history-status.status-pending { background-color: var(--primary-accent); color: var(--primary-bg); }
+.history-status.status-review { background-color: #26C6DA; color: var(--primary-bg); }
+.history-status.status-completed { background-color: #66bb6a; color: var(--primary-bg); }
+
+.no-history-message {
+    color: var(--text-secondary);
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+/* Start Button */
+.start-interview-container {
+    margin-top: 2.5rem;
+}
+.start-interview-button {
+    background-color: var(--primary-accent);
+    color: var(--primary-bg);
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: var(--border-radius);
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.start-interview-button:hover:not(:disabled) {
+    filter: brightness(1.1);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.start-interview-button:disabled {
+    background-color: var(--secondary-accent);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+.system-check-wait-text {
+    margin-top: 0.75rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+
+.error-display {
+  background-color: rgba(229, 115, 115, 0.1);
+  border: 1px solid #e57373;
+  color: #f7a1a1;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  animation: fadeIn 0.3s;
+}
+.error-display.full-width {
+    margin-bottom: 1.5rem;
+}
+
+.candidate-portal-container .app-footer {
+    padding: 1rem 2rem;
+    justify-content: center;
+}
+
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
